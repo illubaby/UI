@@ -82,10 +82,7 @@
                   <option value="A3">A3</option>
                   <option value="A4">A4</option> 
                 </select>
-                <!-- <div class="dropdown-child10"></div> -->
-                <!-- <img class="vector-icon3" alt="" src="./public/vector.svg" /> -->
 
-                <!-- <div class="a4">A4</div> -->
               </div>
               <div class="dropdown17">
                 <div class="both-side">In 2 mặt?</div>
@@ -95,30 +92,28 @@
                 </select>
 
               </div>
-              <div class="dropdown18">
-                <div class="both-side">Số lần in</div>
-                <div class="dropdown-child10"></div>
-                <div class="khng">1</div>
-              </div>
               <div class="dropdown19">
                 <div class="both-side">Định dạng</div>
-                <div class="dropdown-child10"></div>
-                <img class="vector-icon3" alt="" src="./public/vector.svg" />
-
-                <div class="khng">Chiều dọc</div>
+                <select id = "pageSizeSelect" class = "dropdown-child10">
+                  <option value="A1">Chiều ngang</option>
+                  <option value="A2">Chiều dọc </option> 
+                </select>
               </div>
               <div class="dropdown20">
                 <div class="both-side">Số trang / tờ</div>
-                <div class="dropdown-child10"></div>
-                <img class="vector-icon3" alt="" src="./public/vector.svg" />
+                <input type="number" id="pagesPerSheet" class="dropdown-child10" min="1" />
+              </div>
+              <div class="dropdown18">
+                <div class="both-side">Số lần in</div>
+                <input type="number" id="Timesofprint" class="dropdown-child10" min="1" />
 
-                <div class="khng">1</div>
               </div>
             </div>
             <div class="dropdown-parent1">
               <div class="dropdown21">
                 <div class="pages-wrapper">
                   <div class="pages">Trang in:</div>
+                  
                 </div>
                 <div class="dropdown-child10"></div>
                 <img class="vector-icon3" alt="" src="./public/vector.svg" />
@@ -126,10 +121,11 @@
                 <div class="khng">Tất cả</div>
               </div>
               <div class="vector-container">
-                <img class="vector-icon8" alt="" src="./public/vector2.svg" />
+                <input type="text" id="page_to_print" class="dropdown-child10" placeholder="e.g., 1,2,3" pattern="\d+(,\d+)*" title="Enter numbers separated by commas" />
+                <!-- <img class="vector-icon8" alt="" src="./public/vector2.svg" /> -->
 
-                <div class="div37">...</div>
-                <img class="vector-icon9" alt="" src="./public/vector3.svg" />
+                <!-- <div class="div37">...</div> -->
+                <!-- <img class="vector-icon9" alt="" src="./public/vector3.svg" /> -->
               </div>
             </div>
           </div>

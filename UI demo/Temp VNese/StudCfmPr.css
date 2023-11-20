@@ -255,16 +255,17 @@
 }
 .vector-container {
   position: absolute;
-  height: 12.27%;
+  height: 50.27%;
   width: 47.31%;
-  top: 0;
+  top: -10px; /* Adjust this value as needed to move up */
   right: 0;
-  bottom: 87.73%;
+  bottom: auto; /* Set to auto for more control */
   left: 52.69%;
   font-size: var(--font-size-sm);
   color: rgba(0, 0, 0, 0.44);
   font-family: var(--font-abel);
 }
+
 .dropdown-parent1 {
   position: absolute;
   top: 67px;

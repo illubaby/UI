@@ -126,7 +126,7 @@
               </div>
             </div>
           </div>
-          <div class="print-button2">
+          <div class="print-button2" onclick="purchaseSuccessful()">
             <div class="print-button-inner"></div>
             <div class="thanh-ton">Thanh toán</div>
           </div>
@@ -137,13 +137,11 @@
           <div class="dropdown-group">
             <div class="dropdown3">
               <div class="number">Mua (A4-size)</div>
-              <div class="dropdown-inner"></div>
-              <div class="t">0 tờ</div>
+              <input type="number" class="dropdown-inner" value="0" min="0">
             </div>
             <div class="dropdown4">
               <div class="number">Số tiền tương ứng</div>
-              <div class="dropdown-inner"></div>
-              <div class="t">0 VND</div>
+              <input type = "number" class = "dropdown-inner" placeholder="đơn vị VND" min="1000" step="1000">
             </div>
           </div>
         </div>
@@ -151,6 +149,9 @@
     </div>
 
     <script>
+      function purchaseSuccessful() { // got bug and not working !!!
+        alert("Bạn đã thanh toán thành công!"); // This will show a popup saying "Bạn đã thanh toán thành công!" which means "You have purchased successfully!"
+      }
       var linkContainer = document.getElementById("linkContainer");
       if (linkContainer) {
         linkContainer.addEventListener("click", function (e) {

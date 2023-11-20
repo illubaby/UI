@@ -155,6 +155,11 @@
 
       taiLenButton.addEventListener("click", function () {
         document.getElementById('fileInput').click(); // Trigger file input
+        setTimeout(function() {
+          alert("Uploaded");
+          window.location.href = "./StudCfmPr.html";
+      }, 2000);
+
         
       });
 

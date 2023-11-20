@@ -175,6 +175,30 @@
     </div>
     <div id="transactionsDisplay"></div>
     <script>
+      var transactions = [
+      { date: '2023-10-01', amount: 100, description: 'Đã in : 5, số trang còn lại : 2' },
+      { date: '2023-10-05', amount: 200, description: 'Đã in : 7, số trang còn lại : 2' },
+      { date: '2023-10-09', amount: 200, description: 'Đã in : 1, số trang còn lại : 2' },
+      // ... more transactions
+    ];
+
+    function filterTransactions() {
+      var string = '';
+      var startDate = document.getElementById('startDate').value;
+      var endDate = document.getElementById('endDate').value;
+  
+      // Filter logic
+      var filteredTransactions = transactions.filter(function (transaction) {
+        return transaction.date >= startDate && transaction.date <= endDate;
+      });
+  
+      // Displaying the results
+      var displayArea = document.getElementById('transactionsDisplay');
+      displayArea.innerHTML = filteredTransactions.map(function (transaction) {
+        string+=(transaction.date + ' - ' + transaction.description + '\n') ;
+      }).join('');
+      alert(string);
+    }
       var linkContainer = document.getElementById("linkContainer");
       if (linkContainer) {
         linkContainer.addEventListener("click", function (e) {

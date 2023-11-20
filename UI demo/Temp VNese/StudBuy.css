@@ -211,12 +211,13 @@
 }
 .thanh-ton {
   position: absolute;
-  top: 8px;
+  top: 9px;
   left: 18.86px;
   font-weight: 600;
   display: inline-block;
   width: 87.43px;
-  height: 22px;
+  height: 40px;
+  z-index: 999;
 }
 .print-button2 {
   position: absolute;

@@ -167,9 +167,11 @@
         let userExists = users.some(user => user.username === enteredUsername && user.password === enteredPassword);
         if (userExists) {
           alert('Login successful!');
+          window.location.href = "./StudBuy.html";
           // Redirect to another page or change the UI accordingly
         } else {
           alert('Invalid username or password');
+          return;
         }
       });
       
@@ -202,7 +204,7 @@
       );
       if (btnPrytemplate1Container) {
         btnPrytemplate1Container.addEventListener("click", function (e) {
-          window.location.href = "./StudBuy.html";
+          //window.location.href = "./StudBuy.html";
         });
       }
       </script>

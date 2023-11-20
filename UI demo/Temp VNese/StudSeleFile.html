@@ -55,16 +55,20 @@
             <div class="rectangle-parent3">
               <div class="group-child6"></div>
               <div class="ti-ln">Tải lên</div>
+              <input type="file" id="fileInput" style="display: none;" />
             </div>
+
             <div class="rectangle-parent4" id="groupContainer1">
               <div class="group-child6"></div>
               <div class="ti-ln">Tiếp</div>
             </div>
             <div class="upload-files-child2"></div>
             <div class="ko-v-th-container">
+              
               <p class="ko-v-th">Kéo và thả file để tải lên.</p>
               <p class="ko-v-th">Hiện chỉ hỗ trợ PDF.</p>
             </div>
+
             <b class="chn-vn-bn">Chọn văn bản </b>
             <div class="in-vn-bn1">In văn bản</div>
             <div class="div38">
@@ -146,6 +150,16 @@
     </div>
 
     <script>
+            // Assuming "rectangle-parent3" is the class for your "Tải lên" button
+      var taiLenButton = document.querySelector('.rectangle-parent3');
+
+      taiLenButton.addEventListener("click", function () {
+        document.getElementById('fileInput').click(); // Trigger file input
+        
+      });
+
+
+
       var groupContainer1 = document.getElementById("groupContainer1");
       if (groupContainer1) {
         groupContainer1.addEventListener("click", function (e) {

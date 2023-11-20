@@ -169,12 +169,11 @@
           </div>
         </div>
         <div class="print-button1">
-          <div class="print-button-item"></div>
-          <div class="kim-tra1">Kiểm tra</div>
+          <button onclick="filterTransactions()">Kiểm tra</button>
         </div>
       </div>
     </div>
-
+    <div id="transactionsDisplay"></div>
     <script>
       var linkContainer = document.getElementById("linkContainer");
       if (linkContainer) {
@@ -196,6 +195,7 @@
           window.location.href = "./LoginStudentPage.html";
         });
       }
+      
       </script>
   </body>
 </html>

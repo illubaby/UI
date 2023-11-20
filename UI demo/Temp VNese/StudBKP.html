@@ -124,18 +124,17 @@
         <div class="form">
           <div class="input-parent">
             <div class="input">
-              <div class="input1"></div>
-              <div class="johnson-doe">hcmut</div>
-              <div class="label45">
+              
+              
+              <input type="text" class="input1" id="username" placeholder="Username" />
+              <div class="label45">         
                 <div class="divider9"></div>
                 <div class="your-name">Tài khoản BKPay</div>
               </div>
             </div>
             <div class="input-copy-2">
-              <div class="input2"></div>
+              <input type="password" class="input2" id="password" placeholder="Password" />
               <img class="ex-iconeye" alt="" src="./public/exiconeye.svg" />
-
-              <div class="div39">***************</div>
               <div class="label46">
                 <div class="divider10"></div>
                 <div class="password">Mật khẩu</div>
@@ -143,14 +142,37 @@
             </div>
           </div>
           <div class="btn-prytemplate1" id="btnPrytemplate1Container">
-            <div class="btn-prytemplate1-child"></div>
-            <b class="get-started">XÁC MINH </b>
-          </div>
+            <div class="btn-prytemplate1" id="btnPrytemplate1Container">
+              <button id="loginButton" class="get-started">XÁC MINH</button>
+            </div>
         </div>
       </div>
     </div>
 
     <script>
+      document.getElementById('loginButton').addEventListener('click', function(event) {
+        // Prevent the default form submission behavior
+        event.preventDefault();
+      
+        var enteredUsername = document.getElementById('username').value;
+        var enteredPassword = document.getElementById('password').value;
+      
+        fetch('StudBKP.json')
+          .then(response => response.json())
+          .then(users => {
+            let userExists = users.some(user => user.username === enteredUsername && user.password === enteredPassword);
+            if (userExists) {
+              alert('Login successful!');
+              // Redirect to another page or change the UI accordingly
+            } else {
+              alert('Invalid username or password');
+            }
+          });
+      });
+      
+      
+      
+
       var linkContainer = document.getElementById("linkContainer");
       if (linkContainer) {
         linkContainer.addEventListener("click", function (e) {

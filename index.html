@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <script>
+        // This script will be used to validate the login
+        function validateLogin() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Hardcoded user data (usually this should be in a database)
+            // Fetch user data from a separate JSON file
+            fetch('users.json')
+                .then(response => response.json())
+                .then(users => {
+                    // Check if the user exists
+                    var userExists = users.users.some(user => user.username === username && user.password === password);
+
+                    if (userExists) {
+                        alert('Login successful!');
+                    } else {
+                        alert('Invalid username or password.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching user data:', error);
+                    alert('Error loading user data.');
+                });
+
+            // Check if the user exists
+            var userExists = users.users.some(user => user.username === username && user.password === password);
+
+            if (userExists) {
+                alert('Login successful!');
+            } else {
+                alert('Invalid username or password.');
+            }
+            return false; // Prevent form submission for demonstration
+        }
+    </script>
+</head>
+<body>
+    <h2>Login Form</h2>
+    <form onsubmit="return validateLogin()">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username"><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br><br>
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>

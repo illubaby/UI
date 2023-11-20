@@ -1,18 +1,34 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Purchase Confirmation</title>
-</head>
-<body>
-  <div class="print-button2" onclick="purchaseSuccessful()">
-    <div class="print-button-inner"></div>
-    <div class="thanh-ton">Thanh toán</div>
+<!-- Date Selection Area -->
+<div class="date-selection">
+    <input type="date" id="startDate" />
+    <input type="date" id="endDate" />
+    <button onclick="filterTransactions()">Filter</button>
   </div>
-
+  
+  <!-- Display Filtered Transactions -->
+  <div id="transactionsDisplay"></div>
   <script>
-    function purchaseSuccessful() {
-      alert("Bạn đã thanh toán thành công!"); // This will show a popup saying "Bạn đã thanh toán thành công!" which means "You have purchased successfully!"
+    // Sample transaction data (replace this with your JSON data loading logic)
+    var transactions = [
+      { date: '2023-10-01', amount: 100, description: 'Transaction 1' },
+      { date: '2023-10-05', amount: 200, description: 'Transaction 2' },
+      // ... more transactions
+    ];
+  
+    function filterTransactions() {
+      var startDate = document.getElementById('startDate').value;
+      var endDate = document.getElementById('endDate').value;
+  
+      // Filter logic
+      var filteredTransactions = transactions.filter(function (transaction) {
+        return transaction.date >= startDate && transaction.date <= endDate;
+      });
+  
+      // Displaying the results
+      var displayArea = document.getElementById('transactionsDisplay');
+      displayArea.innerHTML = filteredTransactions.map(function (transaction) {
+        return '<div>' + transaction.date + ' - ' + transaction.description + '</div>';
+      }).join('');
     }
   </script>
-</body>
-</html>
+  

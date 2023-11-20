@@ -156,18 +156,21 @@
       
         var enteredUsername = document.getElementById('username').value;
         var enteredPassword = document.getElementById('password').value;
-      
-        fetch('StudBKP.json')
-          .then(response => response.json())
-          .then(users => {
-            let userExists = users.some(user => user.username === enteredUsername && user.password === enteredPassword);
-            if (userExists) {
-              alert('Login successful!');
-              // Redirect to another page or change the UI accordingly
-            } else {
-              alert('Invalid username or password');
-            }
-          });
+    
+        // Hardcoded user credentials
+        var users = [
+          { username: 'user1', password: 'pass1' },
+          { username: 'user2', password: 'pass2' }
+          // Add more users as needed
+        ];
+    
+        let userExists = users.some(user => user.username === enteredUsername && user.password === enteredPassword);
+        if (userExists) {
+          alert('Login successful!');
+          // Redirect to another page or change the UI accordingly
+        } else {
+          alert('Invalid username or password');
+        }
       });
       
       
